@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SMP Delimurni Sukamaju</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/alpinejs@3" defer></script>
+  <style>
+    .background-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -10;
+      overflow: hidden;
+    }
+
+    .background-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.15;
+    }
+
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .scroll-reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans" x-data="{ open: false }">
+  <div class="background-wrapper">
+    <img src="https://i.imgur.com/y1B9Ouq.jpeg" alt="Latar Sekolah" />
+  </div>
+
+  <!-- Navbar -->
+  <header class="bg-white shadow sticky top-0 z-50 transition duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-blue-700">SMP Delimurni Sukamaju</h1>
+      <nav class="hidden md:flex space-x-4">
+        <a href="#beranda" class="hover:text-blue-600 transition">Beranda</a>
+        <a href="#profil" class="hover:text-blue-600 transition">Profil</a>
+        <a href="#pengumuman" class="hover:text-blue-600 transition">Pengumuman</a>
+        <a href="#galeri" class="hover:text-blue-600 transition">Galeri</a>
+        <a href="#kontak" class="hover:text-blue-600 transition">Kontak</a>
+        <a href="https://alfredzz-45.github.io/web-sklh/" class="hover:text-white bg-blue-600 px-3 py-1 rounded text-white transition hover:bg-blue-700">Daftar Sekarang</a>
+      </nav>
+      <div class="md:hidden">
+        <button @click="open = !open" class="text-blue-600 focus:outline-none" aria-label="Buka menu navigasi">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div x-show="open" class="md:hidden px-4 pb-4 space-y-2">
+      <a href="#beranda" class="block hover:text-blue-600">Beranda</a>
+      <a href="#profil" class="block hover:text-blue-600">Profil</a>
+      <a href="#pengumuman" class="block hover:text-blue-600">Pengumuman</a>
+      <a href="#galeri" class="block hover:text-blue-600">Galeri</a>
+      <a href="#kontak" class="block hover:text-blue-600">Kontak</a>
+      <a href="https://alfredzz-45.github.io/web-sklh/" class="block bg-blue-600 text-white text-center rounded py-1">Daftar Sekarang</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="beranda" class="bg-blue-600 text-white py-20 text-center relative overflow-hidden scroll-reveal">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-4xl font-bold mb-4 animate-fadeIn">Selamat datang di <span class="text-yellow-300">SMP Delimurni Sukamaju</span></h2>
+      <p class="text-lg mb-6">Kami hadir untuk membimbing masa depan dengan ilmu, karakter, dan iman.</p>
+      <a href="https://alfredzz-45.github.io/web-sklh/" class="bg-white text-blue-600 font-semibold px-6 py-3 rounded shadow hover:bg-gray-100 transition">Daftar Sekarang</a>
+    </div>
+  </section>
+
+   <!-- Profil Sekolah -->
+   <section id="profil" class="py-16 bg-white/70 backdrop-blur-md scroll-reveal rounded-xl mx-4 my-8 shadow-lg">
+    <div class="max-w-4xl mx-auto px-4 text-center text-gray-800">
+      <h3 class="text-3xl font-semibold mb-4 text-blue-700">Profil Sekolah</h3>
+      <p class="leading-relaxed">
+        SMP Delimurni Sukamaju adalah lembaga pendidikan yang tidak hanya mengedepankan pengetahuan akademis, tetapi juga pembentukan karakter, keterampilan teknologi, dan nilai spiritual. Kami berkomitmen mencetak siswa-siswi yang siap bersaing di era global dengan tetap menjunjung tinggi nilai-nilai luhur bangsa.
+      </p>
+    </div>
+  </section>
+
+  <!-- Visi Misi Sekolah -->
+  <section id="profil" class="py-16 bg-white/70 backdrop-blur-md scroll-reveal rounded-xl mx-4 my-8 shadow-lg">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h3 class="text-3xl font-semibold mb-4 text-blue-700">Visi & Misi</h3>
+      <ul class="text-left max-w-2xl mx-auto list-disc list-inside">
+        <li><strong>Visi:</strong> Menjadi sekolah unggulan dalam membentuk insan yang mandiri, aktif, jujur, dan unggul (MAJU).</li>
+        <li class="mt-2"><strong>Misi:</strong>
+          <ul class="list-disc list-inside ml-4">
+            <li>Menerapkan pembelajaran berbasis teknologi dan karakter.</li>
+            <li>Mengembangkan potensi akademik dan non-akademik secara seimbang.</li>
+            <li>Menanamkan nilai-nilai spiritual dan sosial yang kuat.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+<!-- Galeri -->
+<section id="galeri" class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <h3 class="text-3xl font-semibold mb-6 text-blue-700 text-center">Galeri Kegiatan</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <img src="https://scontent.fkno3-1.fna.fbcdn.net/v/t39.30808-6/491950289_683031721045697_4925770123904589252_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeHYyqn-hXaRsIue_m54nEKvRcQwBSr7m35FxDAFKvubfsTtUy64fJaAqcD2V_X1tL168mim7fQzQNMWL73u4A9T&_nc_ohc=ckN9IMxlrFEQ7kNvwECKX-x&_nc_oc=AdmAEWmXDLT7DFOGY5p9qVFyDwcgMuKrR9gk1sV5xs-BwLvWb5_tDeZdU4n4MsNTgj0&_nc_zt=23&_nc_ht=scontent.fkno3-1.fna&_nc_gid=EgPKqqkwIIHCay4HbXFo8g&oh=00_AfKqygevw3DxTuOoKgA9hS_9qM_WIY798l2VRIYH6RfsHA&oe=68238A21" alt="Foto 1" class="rounded shadow">
+      <img src="https://scontent.fkno3-1.fna.fbcdn.net/v/t39.30808-6/492415013_683030167712519_3418567795518538249_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeFsEKJf8LN2epVlX6x5Gh0p9L6fbnTpQXX0vp9udOlBdUMVWbS96k4SYkoxGIPfZUSsjXjhowFMVxiRPP19pjXR&_nc_ohc=HbuBtMdiEyAQ7kNvwHond9r&_nc_oc=AdmqzmF3T8YVRDsYwtFLQQD5fjA9NbbB6B5vSiqSGbb46P1D2c3dgdftK2BfqaFG0kw&_nc_zt=23&_nc_ht=scontent.fkno3-1.fna&_nc_gid=AuGnBtg9JRAg4rqqbsQG-Q&oh=00_AfLe1cw9nvwOGvpoXeYTqtZ7SyEPEbm_TVRXeOgROSSd_w&oe=682388A0" alt="Foto 2" class="rounded shadow">
+      <img src="https://scontent.fkno3-1.fna.fbcdn.net/v/t39.30808-6/492205286_683033007712235_8791580097054765503_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=110&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeGl9sStwwZK2kjsjPguDhivDFiK7YeznzgMWIrth7OfOMGG9vBSAu8J7ly8om9SHuifvDAAudOGX-WV27IJN7nS&_nc_ohc=H6VP0hs_RiEQ7kNvwFXKsAR&_nc_oc=AdmYL90mTkQpkaOqfLuRmq90HIWoDbD-zEQwMKcSVhDET3TlVoHDAvVoSaUS58mmKHc&_nc_zt=23&_nc_ht=scontent.fkno3-1.fna&_nc_gid=QzPYSONtLADdyan9NpFvRQ&oh=00_AfIx_CIBrbJQwn_1cJKXfHhkCrbGD53konBzMw63wBGn6A&oe=6823983F" alt="Foto 3" class="rounded shadow">
+      <img src="https://scontent.fkno3-1.fna.fbcdn.net/v/t39.30808-6/491947885_683032014379001_7202987066859033608_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=100&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeGiLdvkzCmhw1a1lylYgSN10gsf9hIYf4zSCx_2Ehh_jB7kUcOyHsW1BeOuUDUIONxCU86SQoO93ndmurtCmah8&_nc_ohc=rg4kH-YNv0EQ7kNvwFfGv7X&_nc_oc=AdnpHQAWm0DOZlRHs_wcVXmTOuwEH3Y8RhaXigi2sYRi5yugT4x0qsjtwIrwWVAqHTo&_nc_zt=23&_nc_ht=scontent.fkno3-1.fna&_nc_gid=3unQEvhoqHiuIes8iDAr1w&oh=00_AfIucf-1CQcx6jQDlVfLqnmPoDMzVbssYEs-Y2LY27tMDA&oe=6823A35E" alt="Foto 3" class="rounded shadow">  
+      <img src="https://scontent.fkno3-1.fna.fbcdn.net/v/t39.30808-6/492196574_683035007712035_813743316461109854_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=100&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeHW-8erTHKsaOjynGlfw9VzR5doP9g7CEhHl2g_2DsISFfBra2jI3uWDTVhj3KtVRHPrNn_C3fAUxTBxHK5Zoq5&_nc_ohc=cOKofOeAR8MQ7kNvwFWRNOi&_nc_oc=AdkCWstdWSEi44wH30PJ4UtE7RGUCdUSB_olqn9AkAnIZvWlAo1NtrsTRdVv3NSuQ0c&_nc_zt=23&_nc_ht=scontent.fkno3-1.fna&_nc_gid=hMY5V_KlW0eRlpSfPRDYJw&oh=00_AfLkmtsfZ-OPb-scejVb9X_9FEpeDHsvZAgSuTXvEYlQBQ&oe=68236FB5" alt="Foto 3" class="rounded shadow">  
+      <img src="https://scontent.fkno3-1.fna.fbcdn.net/v/t39.30808-6/491996586_683035394378663_6878705657801913855_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeFJNbXu-EQ5HsHUEwBOsQWoCOnKWQaV3rYI6cpZBpXetqHf4zTdhbPDp4-Dv5Jb61UYrSG2OWFl_DnR1g-QhvNa&_nc_ohc=TmN78gpYlSMQ7kNvwEnG_Ij&_nc_oc=AdmfQLbPjOfMwGQwaojy_R3qblHGtgwOvpWkS0RRiomwPIukDUHmxsKmJoM8AFzqJd0&_nc_zt=23&_nc_ht=scontent.fkno3-1.fna&_nc_gid=NjpIFW6X13QWEPr6-3ZETw&oh=00_AfIBmels2aVoyNuDRN4GpK-53--xb9Mxw4bvVPBroyectg&oe=68239ACA" alt="Foto 3" class="rounded shadow">  
+    </div>
+  </div>
+</section>
+
+
+  <!-- Pengumuman -->
+  <section id="pengumuman" class="py-16 bg-gray-100 scroll-reveal">
+    <div class="max-w-4xl mx-auto px-4">
+      <h3 class="text-3xl font-semibold mb-6 text-blue-700 text-center">Pengumuman Terbaru</h3>
+      <ul class="space-y-4">
+        <li class="bg-white shadow p-4 rounded-lg">
+          <h4 class="text-lg font-bold">Penerimaan Siswa Baru 2025 Dibuka!</h4>
+          <p class="text-sm text-gray-600">Tanggal: 1 Juni 2025</p>
+        </li>
+        <li class="bg-white shadow p-4 rounded-lg">
+          <h4 class="text-lg font-bold">Lomba Sains Nasional – Finalis dari Sekolah Kita!</h4>
+          <p class="text-sm text-gray-600">Tanggal: 15 Mei 2025</p>
+        </li>
+        <li class="bg-white shadow p-4 rounded-lg">
+          <h4 class="text-lg font-bold">Perkembangan Sekolah – Pemberdayaan Pendidikan SMP Delimurni Sukamaju</h4>
+          <p class="text-sm text-gray-600">Tanggal: 15 Mei 2025</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Kontak dengan notifikasi -->
+  <section id="kontak" class="py-16 bg-gray-100" x-data="{ sukses: false }">
+    <div class="max-w-4xl mx-auto px-4">
+      <h3 class="text-3xl font-semibold mb-6 text-blue-700 text-center scroll-reveal">Kontak Kami</h3>
+      <form class="space-y-4 scroll-reveal" @submit.prevent="sukses = true">
+        <input type="text" placeholder="Nama" class="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+        <input type="email" placeholder="Email" class="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+        <textarea placeholder="Pesan" class="w-full border border-gray-300 p-2 rounded h-32 focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-800 transition">Kirim</button>
+        <p x-show="sukses" class="text-green-600 font-semibold mt-2">Pesan Anda telah dikirim!</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-700 text-white py-4 text-center">
+    <p>&copy; 2025 SMP Delimurni Sukamaju. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.scroll-reveal');
+    const revealOnScroll = () => {
+      for (const el of reveals) {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        const revealPoint = 100;
+
+        if (elementTop < windowHeight - revealPoint) {
+          el.classList.add('active');
+        }
+      }
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('bg-blue-700', 'text-white', 'shadow-md');
+        navbar.classList.remove('bg-white');
+      } else {
+        navbar.classList.remove('bg-blue-700', 'text-white', 'shadow-md');
+        navbar.classList.add('bg-white');
+      }
+    });
+  </script>
+</body>
+
+</html>
